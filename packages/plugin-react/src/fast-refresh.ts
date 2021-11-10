@@ -78,6 +78,7 @@ export function addRefreshWrapper(
 }
 
 export function isRefreshBoundary(ast: t.File): boolean {
+  const addRefreshWrapper = () => {};
   // Every export must be a React component.
   return ast.program.body.every((node) => {
     if (node.type !== 'ExportNamedDeclaration') {
